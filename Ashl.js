@@ -80,7 +80,7 @@ con.query("insert into "+Eamsetcode+"_Attendance values(?,?,?,?);",[Id,Attended,
  //Student Info by Id we can get
   app.get("/Studentinfo/:Id",(req,res)=>{
       const Idnum=req.params.Id;
-  con.query('select * from '+Eamsetcode+' where id=?',Idnum,(err,result)=>{
+  con.query('select * from opq where id=?',Idnum,(err,result)=>{
            if(err){
                console.log(err)
            }
