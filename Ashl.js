@@ -209,5 +209,5 @@ app.delete("/delete/:Date/:Department/:Year",(req,res)=>{
   
  app.listen(process.env.port, function(err){
 	if (err) console.log(err);
-	console.log("Server listening on PORT",process.env.port);
+	res.send("Connected")
 });
