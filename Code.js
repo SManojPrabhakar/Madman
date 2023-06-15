@@ -577,9 +577,9 @@ app.post("/lectainsert",(req,res)=>{
 
               //posting posts by timestamp
               //checked sucessfully
-              app.patch("/Posting/",(req,res)=>{
+              app.patch("/Posting/:id",(req,res)=>{
                 timestamp=req.body.Timestamp
-                image=req.body.post
+                image=req.params.post
                 con.query('update posts SET posts=JSON_SET(posts, CONCAT(\'$."\',?, \'"\'),?) where id=?',[timestamp,image],(error,results,fields)=>{
                   if(error){
                     res.send(error.message)
