@@ -12,9 +12,7 @@ const con=mysql.createConnection({
    database:process.env.database
 })
 
-app.get("/getr/",(req,res)=>{
-   res.send("Hello World")
-})
+
 
 //registration
 //checked and successfull
