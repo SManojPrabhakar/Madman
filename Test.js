@@ -822,7 +822,7 @@ app.post("/post/l1",(req,res)=>{
                       })
      app.listen(process.env.port, function(err){
         if (err) console.log(err);
-        res.send("Server listening on PORT",process.env.port)
+    
         console.log("Server listening on PORT",process.env.port);
     });   
 
