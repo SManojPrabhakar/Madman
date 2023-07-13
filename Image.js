@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 app.get('/image', (req, res) => {
-  const imagePath = '/Images/tick.PNG'; // Replace with the actual path to the image file on your EC2 instance
+  const imagePath = '/Images/tick.PNG/'; // Replace with the actual path to the image file on your EC2 instance
 
   fs.readFile(imagePath, (err, data) => {
     if (err) {
