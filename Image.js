@@ -3,17 +3,16 @@ const express = require('express');
 
 const app = express();
 
-app.get('/image', (req, res) => {
-  const imagePath = '/Images/tick.PNG'; // Replace with the actual path to the image file on your EC2 instance
+app.get('/file', (req, res) => {
+  const filePath = '/Images/tick.PNG/';
 
-  fs.readFile(imagePath, (err, data) => {
+  fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
-      return res.status(500).send('Error reading image file');
+      return res.status(500).send('Error reading file');
     }
 
-    res.writeHead(200, { 'Content-Type': 'image/jpeg' });
-    res.end(data);
+    res.send(data);
   });
 });
 
