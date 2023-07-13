@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static('public')); // Serve static files from the 'public' directory
 
 app.get('/image', (req, res) => {
-  const imagePath = 'Images/tick.PNG';
+  const imagePath = '/Images/tick.PNG/';
   res.sendFile(path.resolve(imagePath));
 });
 
