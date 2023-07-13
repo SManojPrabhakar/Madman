@@ -1,21 +1,18 @@
-const fs = require('fs');
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
-app.get('/file', (req, res) => {
-  const filePath = '/Images/tick.PNG/';
+app.use(express.static('public')); // Serve static files from the 'public' directory
 
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send('Error reading file');
-    }
+app.get('/images/:imageName', (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = path.join(Images, 'public/images', imageName); // Replace 'public/images' with the actual path to your images directory on the EC2 instance
 
-    res.send(data);
-  });
+  res.sendFile(imagePath);
 });
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
+
